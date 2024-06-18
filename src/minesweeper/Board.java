@@ -28,10 +28,10 @@ public class Board extends JPanel implements ActionListener {
 
     //Fields related to board and cells
 
-    private final int CELL_SIZE = 15;
-    private final int N_MINES = 10;
-    private static int N_ROWS = 16;
-    private static int N_COLS = 16;
+    private final int CELL_SIZE = 30;
+    private final int N_MINES = N_COLS + 20;
+    private static int N_ROWS = 16*2;
+    private static int N_COLS = 16*2;
     private static String CELL_SPLITTER = " - ";
     private static String OBJECT_SPLITTER = "$";
     private final int BOARD_WIDTH = N_ROWS * CELL_SIZE + 1;
@@ -349,8 +349,8 @@ public class Board extends JPanel implements ActionListener {
         //set up the grid
         while (i < N_MINES) {
             Random random = new Random();
-            int positionX = (int) (random.nextInt(15 - 0 + 1) + 0);
-            int positionY = (int) (random.nextInt(15 - 0 + 1) + 0);
+            int positionX = (int) (random.nextInt(N_ROWS) + 0);
+            int positionY = (int) (random.nextInt(N_COLS) + 0);
 
             //randomly place the bomb cell
             if(gameBoard[positionX][positionY].getCellType() != CellType.Bomb) {
@@ -414,63 +414,60 @@ public class Board extends JPanel implements ActionListener {
 
 
     @Override
-    public void paintComponent(Graphics g) {
+public void paintComponent(Graphics g) {
+    int uncover = 0;
 
-        int uncover = 0;
+    for (int i = 0; i < N_ROWS; i++) {
+        for (int j = 0; j < N_COLS; j++) {
+            Cell cell = gameBoard[i][j];
+            String imageName = cell.getImageName();
 
-        for (int i = 0; i < N_ROWS; i++) {
-            for (int j = 0; j < N_COLS; j++) {
-
-                Cell cell = gameBoard[i][j];
-                String imageName = cell.getImageName();
-
-                //game over when user clicks on mine
-                if (inGame && cell.getCellType() == CellType.Bomb && !cell.isCoveredCell()) {
-                    inGame = false;
-                }
-                if (!inGame) {//when game is over
-                    if (cell.getCellType() == CellType.Bomb && !cell.isMarkedCell()) {
-                        cell.flipUp();
-                        imageName = ImageName.Bomb.toString(); // draw mine
-                    } else if (cell.isCoveredCell() && cell.getCellType() == CellType.Bomb && cell.isMarkedCell()) {
-                        imageName = ImageName.Marked.toString(); //draw mark
-                    } else if (cell.isCoveredCell() && cell.getCellType() != CellType.Bomb && cell.isMarkedCell()) {//wrongly marked cells
-                        imageName = ImageName.Wrongmarked.toString(); //draw wrong mark
-                    } else if (cell.isCoveredCell()) {//board cells that are still covered remain covered
-                        imageName = ImageName.Covered.toString(); //draw cover
-                    }
-
-                } else {//when game is still going
-                    if (cell.isMarkedCell()) {//draw a mark if user clicks on covered cell
-                        imageName = ImageName.Marked.toString();
-                    } else if (cell.isCoveredCell()) {//draw cover when user clicks on a flagged/marked cell, cover is revealed reducing cell value
-                        imageName = ImageName.Covered.toString();
-                        uncover++;
-                    }
-                }
-
-                g.drawImage(images.get(imageName), (j * CELL_SIZE),
-                        (i * CELL_SIZE), this);
+            // game over when user clicks on mine
+            if (inGame && cell.getCellType() == CellType.Bomb && !cell.isCoveredCell()) {
+                inGame = false;
             }
-        }
+            if (!inGame) { // when game is over
+                if (cell.getCellType() == CellType.Bomb && !cell.isMarkedCell()) {
+                    cell.flipUp();
+                    imageName = ImageName.Bomb.toString(); // draw mine
+                } else if (cell.isCoveredCell() && cell.getCellType() == CellType.Bomb && cell.isMarkedCell()) {
+                    imageName = ImageName.Marked.toString(); // draw mark
+                } else if (cell.isCoveredCell() && cell.getCellType() != CellType.Bomb && cell.isMarkedCell()) { // wrongly marked cells
+                    imageName = ImageName.Wrongmarked.toString(); // draw wrong mark
+                } else if (cell.isCoveredCell()) { // board cells that are still covered remain covered
+                    imageName = ImageName.Covered.toString(); // draw cover
+                }
+            } else { // when game is still going
+                if (cell.isMarkedCell()) { // draw a mark if user clicks on covered cell
+                    imageName = ImageName.Marked.toString();
+                } else if (cell.isCoveredCell()) { // draw cover when user clicks on a flagged/marked cell, cover is revealed reducing cell value
+                    imageName = ImageName.Covered.toString();
+                    uncover++;
+                }
+            }
 
-        if (uncover == 0 && inGame) {//when there's nothing left to uncover
-            inGame = false;
-            statusbar.setText("Game won");
-        } else if (!inGame) {
-            //Clear all user steps stored in gameSteps so user cannot "undo" moves when
-            //bomb is clicked on
-            gameSteps.clear();
-            statusbar.setText("Game lost");
-        }
-
-        //no more "Undo" option once user undoes all the steps
-        if (gameSteps.empty()) {
-            this.bUndo.setEnabled(false);
-        } else {
-            this.bUndo.setEnabled(true);
+            g.drawImage(images.get(imageName), (j * CELL_SIZE), (i * CELL_SIZE), CELL_SIZE, CELL_SIZE, this); // Scale images to 15x15
         }
     }
+
+    if (uncover == 0 && inGame) { // when there's nothing left to uncover
+        inGame = false;
+        statusbar.setText("Game won");
+    } else if (!inGame) {
+        // Clear all user steps stored in gameSteps so user cannot "undo" moves when
+        // bomb is clicked on
+        gameSteps.clear();
+        statusbar.setText("Game lost");
+    }
+
+    // no more "Undo" option once user undoes all the steps
+    if (gameSteps.empty()) {
+        this.bUndo.setEnabled(false);
+    } else {
+        this.bUndo.setEnabled(true);
+    }
+}
+
 
 
     //Makes changes based on user action
