@@ -41,7 +41,7 @@ public class Game extends JFrame {
     mainMenuPanel.setLayout(new BoxLayout(mainMenuPanel, BoxLayout.Y_AXIS));
 
     // Title label
-    JLabel titleLabel = new JLabel("MINESWEEPER: BEN10 EDITION");
+    JLabel titleLabel = new JLabel("MINESWEEPER: BEN 10 EDITION");
     titleLabel.setAlignmentX(Component.TOP_ALIGNMENT);
     titleLabel.setAlignmentY(Component.TOP_ALIGNMENT);
     titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
