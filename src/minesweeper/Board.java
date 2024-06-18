@@ -24,18 +24,20 @@ import javax.swing.JOptionPane;
 
 public class Board extends JPanel implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     //DEFINE FIELDS
 
     //Fields related to board and cells
 
-    private final int CELL_SIZE = 30;
+    private static final int CELL_SIZE = 30;
     private final int N_MINES = N_COLS + 20;
     private static int N_ROWS = 16*2;
     private static int N_COLS = 16*2;
     private static String CELL_SPLITTER = " - ";
     private static String OBJECT_SPLITTER = "$";
-    private final int BOARD_WIDTH = N_ROWS * CELL_SIZE + 1;
-    private final int BOARD_HEIGHT = N_COLS * CELL_SIZE + 1;
+    public static final int BOARD_WIDTH = N_ROWS * CELL_SIZE + 1;
+    public static final int BOARD_HEIGHT = N_COLS * CELL_SIZE + 1;
     private int minesLeft;//keeps track of how many mines are left based on what user has flagged
     //2D array to represent game board
     protected static Cell[][] gameBoard;
