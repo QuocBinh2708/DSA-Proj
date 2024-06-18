@@ -4,17 +4,20 @@
 
 ### Team Members
 
-| Order |                   Name                   |     ID      |                                Task                                 | Contribution |
-| :---: |:----------------------------------------:|:-----------:|:-------------------------------------------------------------------:|:------------:|
-|   1   |           Nguyễn Xuân Bách               | ITITIU20361 |Readme, Report, IntelliJ&Github manager, Code Contributor            |     50%      |
-|   2   |           Lý Quang Thắng                 | ITITIU20304 |Resource manager, GUI, Demo, Code contributor                        |     50%      |
+| Order |        Name        |     ID      |                          Task                           | Contribution |
+|:-----:|:------------------:|:-----------:|:-------------------------------------------------------:|:------------:|
+|   1   |  Lê Kỳ Quốc Bình   | ITITIU20169 | GitHub manager, Code contributor, Leader, Idea planning |     20%      |
+|   2   |   Lý Quang Thắng   | ITITIU20304 |      Resource manager, GUI, Demo, Code contributor      |     20%      |
+|   3   |   Bùi Quang Khải   | ITDSIU20095 |           UI/UX contributor, Designer, Artist           |     20%      |
+|   4   |   Vĩnh Bảo Phúc    | ITITIU20077 |                Report, Code contributor                 |     20%      |
+|   5   | Phan Đình Hữu Phúc | ITITIU20127 |                    Code contributor                     |     20%      |
 
 
 <!-- ABOUT THE PROJECT -->     
 # Minesweeper 
 
 One of the infamous childhood game: Minesweeper!
-This version is simlar to traditional Minesweeper, but remaked with extend features
+This version is similar to traditional Minesweeper, but remade with extend features
 
 
 - The user can only undo moves after committed any moves, which is true even when the previous 
@@ -28,6 +31,7 @@ whether they want to restore previous status or start a new game when the game i
 ## Features
 
 - Completed:
++ Ben 10
 + Adding user's name
 + "Save" game status
 + Undo any number of moves, stop, restart
@@ -45,9 +49,9 @@ whether they want to restore previous status or start a new game when the game i
 Goal: sweep all 40 bombs from a 16x16 mine field
 
 Left click to uncover the cells, a cell with a number reveals the number of neighboring cells that contain bombs
-If a empty cell and its neighbors are also empty they both will be revealed (the entire region of all empty cells) until a cell with a number appears. Use this information plus guess work to avoid the bombs. 
+If an empty cell and its neighbors are also empty they both will be revealed (the entire region of all empty cells) until a cell with a number appears. Use this information plus guess work to avoid the bombs. 
 
-To mark a cell you think is a bomb, right-click on the cell and a flag will appear. You have 40 flags in total, one for each bomb. You will be notified when you have used up all your 40 flags with a count of how many flags you have left in the lower left corner. The user can “unflag” a cell by right clicking the cell again. 
+To mark a cell you think is a bomb, right-click on the cell and a flag will appear. You have 40 flags in total, one for each bomb. You will be notified when you have used up all your 40 flags with a count of how many flags you have left in the lower left corner. The user can “un-flag” a cell by right clicking the cell again. 
 
 The game is won when the user has successfully identified all the cells that contain bombs and the game is lost when the player clicks on a cell which contains a bomb. 
 
@@ -76,7 +80,7 @@ https://tinyurl.com/ymfw8j5x
 
 ## References
 
-1. https://github.com/SebastianThomas/minesweeper
+1. https://github.com/QuocBinh2708/DSA-Proj
 2. https://zetcode.com/javagames/minesweeper/
 3. https://www.youtube.com/playlist?list=PLlD_ilI9JDbBVYP5uQUII81Q3w_pxAKhB
 4. https://www.youtube.com/playlist?list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKvymK
