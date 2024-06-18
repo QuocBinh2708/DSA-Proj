@@ -21,6 +21,8 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.Stack;
 import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.event.*;
 
 public class Board extends JPanel implements ActionListener {
 
@@ -29,7 +31,7 @@ public class Board extends JPanel implements ActionListener {
     //Fields related to board and cells
 
     private final int CELL_SIZE = 30;
-    private final int N_MINES = N_COLS + 20;
+    private final int N_MINES = (int) Math.round((N_COLS*N_ROWS)*0.07);
     private static int N_ROWS = 16*2;
     private static int N_COLS = 16*2;
     private static String CELL_SPLITTER = " - ";
@@ -198,23 +200,31 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void showRules() {
-        JOptionPane.showMessageDialog(null, "GAME RULES: \n" + "\n"
-                + "Goal: sweep all bombs from a 16x16 mine field" + "\n"
-                + "Left click to uncover the cells, a cell with a number reveals the number of neighboring cells that contain bombs" +"\n"
-                + "If a empty cell and its neighbors are also empty they both will be revealed " + "\n"
-                +"(the entire region of all empty cells) until a cell with a number appears"+"\n"
-                + "To mark a cell you think is a bomb, right-click on the cell and a flag will appear" +"\n"
-                +" You have 40 flags in total, one for each bomb. The user can “unflag” a cell by right clicking the cell again."+"\n"
-                + "You will be notified when you have used up all your 40 flags with a count in the lower left corner" +"\n"
-                + "The user can “unflag” a cell by right clicking the cell again."+"\n"
-                + "The game is won when the user has successfully identified all the cells that contain bombs" +"\n"
-                +" and the game is lost when the player clicks on a cell which contains a bomb" + "\n" +
-                "The user can undo any number of moves for any type of move" +"\n" +
-                " which includes clicking on flagged cells, empty cells, and neighbor cells." +"\n"
-                + "To start a new game, just clicks anywhere on the board. " +"\n"+
-                "You can stop the game at any point by exiting the game. The game will automatically be saved." +
-                " When re-loaded, the user will have the option of starting a new game or continue last game.. "+"\n");
+        String rules = "GAME RULES:\n" +
+                "\n" +
+                "Goal: Clear all bombs from a 16x16 minefield.\n" +
+                "Left-click to uncover cells. Numbers show neighboring bomb count.\n" +
+                "Empty cells and their empty neighbors are uncovered together.\n" +
+                "Right-click to flag suspected bombs (40 flags total).\n" +
+                "Win by uncovering all non-bomb cells; lose by clicking a bomb.\n" +
+                "Unlimited undo for any move.\n" +
+                "Click anywhere to start a new game.\n" +
+                "Game autosaves for later play.\n" +
+                "\n" +
+                "\n" +
+                "BOMB COUNT:\n" +
+                "HEATBLAST = 1\n" +
+                "WILD MUD = 2\n" +
+                "DIAMOND HEAD = 3\n" +
+                "XLR8 = 4\n" +
+                "GRAY MATTER = 5\n" +
+                "FOUR ARMS = 6\n" +
+                "STINK FLY = 7\n" +
+                "GHOST FREAK = 8\n";
+
+        JOptionPane.showMessageDialog(null, rules);
     }
+
 
     //Initializes the game board
     private void initBoard() throws IOException {
