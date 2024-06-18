@@ -35,7 +35,7 @@ public class Game extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(BOARD_WIDTH, BOARD_HEIGHT);
     setLocationRelativeTo(null);
-
+        
     // Create main menu with background image
     ImagePanel mainMenuPanel = new ImagePanel("image/Ben10.jpg");
     mainMenuPanel.setLayout(new BoxLayout(mainMenuPanel, BoxLayout.Y_AXIS));
