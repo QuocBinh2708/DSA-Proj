@@ -11,6 +11,11 @@
 |   3   |   Bùi Quang Khải   | ITDSIU20095 |           UI/UX contributor, Designer, Artist           |     20%      |
 |   4   |   Vĩnh Bảo Phúc    | ITITIU20127 |                Report, Code contributor                 |     20%      |
 |   5   | Phan Đình Hữu Phúc | ITDSIU20077 |                    Code contributor                     |     20%      |
+|   3   |   Bùi Quang Khải   | ITDSIU20095 |  UI/UX contributor, Designer, Artist, Code contributor  |     20%      |
+|   4   |   Vĩnh Bảo Phúc    | ITITIU20077 |                Report, Code contributor                 |     20%      |
+|   5   | Phan Đình Hữu Phúc | ITITIU20127 |                    Code contributor                     |     20%      |
+
+[//]: # (>>>>>>> 8333ba75931d407698e634ba254617263efbf8fe)
 
 
 <!-- ABOUT THE PROJECT -->     
@@ -41,8 +46,8 @@ whether they want to restore previous status or start a new game when the game i
 ## Technologies
 
 - Language: [JAVA](https://www.java.com/en/)
-- Framework: [IntelliJ](https://www.jetbrains.com/idea/)
-- Library: [JavaSwing](https://en.wikipedia.org/wiki/Swing_(Java)) and [JavaAWS](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit)
+- Framework: [IntelliJ](https://www.jetbrains.com/idea/) and [Visual Studio Code](https://code.visualstudio.com)
+- Library: [JavaSwing](https://en.wikipedia.org/wiki/Swing_(Java)), [JavaAWS](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit) and [JLayer](https://github.com/umjammer/jlayer)
 
 ## Rules: 
 <div style="text-align:justify">

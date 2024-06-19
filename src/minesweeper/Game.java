@@ -123,6 +123,23 @@ public class Game extends JFrame {
         buttonPanel.add(bRule, BorderLayout.NORTH);
         buttonPanel.add(bUndo, BorderLayout.SOUTH);
 
+        bPauseResumeMusic = new JButton("Pause Music");
+        bPauseResumeMusic.setAlignmentX(Component.CENTER_ALIGNMENT);
+        bPauseResumeMusic.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (player.isPaused()) {
+                    player.resume();
+                    bPauseResumeMusic.setText("Stop Music");
+                } else {
+                    player.pause();
+                    bPauseResumeMusic.setText("Start Music");
+                }
+            }
+        });
+        buttonPanel.add(bPauseResumeMusic);
+        buttonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
         statusPanel = new JPanel();
         statusbar = new JLabel("Flags Left");
         textArea = new JTextArea();
