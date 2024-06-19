@@ -9,8 +9,8 @@
 |   1   |  Lê Kỳ Quốc Bình   | ITITIU20169 | GitHub manager, Code contributor, Leader, Idea planning |     20%      |
 |   2   |   Lý Quang Thắng   | ITITIU20304 |      Resource manager, GUI, Demo, Code contributor      |     20%      |
 |   3   |   Bùi Quang Khải   | ITDSIU20095 |           UI/UX contributor, Designer, Artist           |     20%      |
-|   4   |   Vĩnh Bảo Phúc    | ITITIU20077 |                Report, Code contributor                 |     20%      |
-|   5   | Phan Đình Hữu Phúc | ITITIU20127 |                    Code contributor                     |     20%      |
+|   4   |   Vĩnh Bảo Phúc    | ITITIU20127 |                Report, Code contributor                 |     20%      |
+|   5   | Phan Đình Hữu Phúc | ITDSIU20077 |                    Code contributor                     |     20%      |
 
 
 <!-- ABOUT THE PROJECT -->     
