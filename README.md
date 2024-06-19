@@ -41,7 +41,7 @@ whether they want to restore previous status or start a new game when the game i
 ## Technologies
 
 - Language: [JAVA](https://www.java.com/en/)
-- Framework: [IntelliJ](https://www.jetbrains.com/idea/)
+- Framework: [IntelliJ](https://www.jetbrains.com/idea/) and [Visual Studio Code](https://code.visualstudio.com)
 - Library: [JavaSwing](https://en.wikipedia.org/wiki/Swing_(Java)), [JavaAWS](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit) and [JLayer](https://github.com/umjammer/jlayer)
 
 ## Rules: 
