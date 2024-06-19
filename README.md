@@ -42,7 +42,7 @@ whether they want to restore previous status or start a new game when the game i
 
 - Language: [JAVA](https://www.java.com/en/)
 - Framework: [IntelliJ](https://www.jetbrains.com/idea/)
-- Library: [JavaSwing](https://en.wikipedia.org/wiki/Swing_(Java)) and [JavaAWS](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit)
+- Library: [JavaSwing](https://en.wikipedia.org/wiki/Swing_(Java)), [JavaAWS](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit) and [JLayer](https://github.com/umjammer/jlayer)
 
 ## Rules: 
 <div style="text-align:justify">
